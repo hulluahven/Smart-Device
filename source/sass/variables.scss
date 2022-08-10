@@ -14,13 +14,15 @@ $black-pearl:                        #041827;
 $alice-blue:                         #f2f5f6;
 $alice-blue-shade:                   #f8fdff;
 $deep-sky-blue:                      #00b2ff;
+$iron:                               #c7c9ca;
 
 // Gradient
 
-$black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
-$pearl-gradient:                    rgba(4, 24, 39, 100%);
-$pearl-field:                       rgba(4, 20, 39, 15%);
-$back-gradient:                     rgba(25, 32, 36, 100%);
+$black-to-right:                      linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
+$pearl-gradient:                      linear-gradient(180deg, rgba(4, 24, 39, 1) 88%, rgba(252, 255, 255, 0.7) 113%);
+$pearl-field:                         rgba(4, 20, 39, 15%);
+$back-gradient:                       rgba(25, 32, 36, 100%);
+$shadow:                              (0 4px 4px 0 rgba(0, 0, 0, 0.25));
 
 // Typography
 // ---------------------------------
