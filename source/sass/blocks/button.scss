@@ -1,0 +1,33 @@
+.button__call {
+  display: inline-block;
+  border: 1px solid  rgba(242, 245, 246, 1);
+  border-radius: 3px;
+  text-decoration: none;
+  color: $alice-blue;
+  font-family: "RobotoCondensed", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  padding: 10px 18px;
+
+  @media (max-width: $vp-1023) {
+    display: none;
+  }
+}
+
+.button__call:hover {
+  background-color: $alice-blue;
+  color: $black-pearl;
+}
+
+.button__call:focus {
+  background-color: $alice-blue;
+  color: $black-pearl;
+}
+
+.button__call:active {
+  background-color: $iron;
+  color: $black-pearl;
+}

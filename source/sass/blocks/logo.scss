@@ -1,0 +1,42 @@
+.logo {
+  font-size: 0;
+}
+
+.logo__wrapper {
+  padding-top: 4px;
+
+  @media (max-width: $vp-1023) {
+    padding-top: 0;
+  }
+}
+
+.logo__main {
+  display: none;
+}
+
+.logo__text {
+  fill: $deep-sky-blue;
+
+  @media (max-width: $vp-767) {
+    display: none;
+  }
+}
+
+.logo__brain {
+  display: none;
+  fill: $deep-sky-blue;
+
+  @media (max-width: $vp-767) {
+    fill: $deep-sky-blue;
+    display: block;
+  }
+}
+
+
+.logo__text:hover {
+  fill: $iron;
+}
+
+.logo__text:active {
+  fill: $alice-blue;
+}
