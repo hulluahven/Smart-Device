@@ -12,6 +12,7 @@ $color-transparent:                 rgba(255, 255, 255, 0);
 
 $black-pearl:                        #041827;
 $alice-blue:                         #f2f5f6;
+$alice-blue-deep:                    #f2f5f7;
 $alice-blue-shade:                   #f8fdff;
 $deep-sky-blue:                      #00b2ff;
 $iron:                               #c7c9ca;
@@ -19,10 +20,11 @@ $iron:                               #c7c9ca;
 // Gradient
 
 $black-to-right:                      linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
-$pearl-gradient:                      linear-gradient(180deg, rgba(4, 24, 39, 1) 88%, rgba(252, 255, 255, 0.7) 113%);
+$pearl-gradient:                      linear-gradient(180deg, #041827 84.9%, rgba(4, 24, 39, 0) 100%);
+$pearl-new-gradient:                  linear-gradient(to bottom, rgba(25, 32, 36, 0.7));
 $pearl-field:                         rgba(4, 20, 39, 15%);
 $back-gradient:                       rgba(25, 32, 36, 100%);
-$shadow:                              (0 4px 4px 0 rgba(0, 0, 0, 0.25));
+$shadow:                              (0 4px 4px rgba(0, 0, 0, 0.25));
 
 // Typography
 // ---------------------------------
