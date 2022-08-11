@@ -10,7 +10,7 @@
   line-height: 17px;
   letter-spacing: 0.4px;
   text-transform: uppercase;
-  padding: 10px 18px;
+  padding: 11px 18px;
 
   @media (max-width: $vp-1023) {
     display: none;
@@ -30,4 +30,44 @@
 .button__call:active {
   background-color: $iron;
   color: $black-pearl;
+}
+
+.button__advise span {
+  display: inline-block;
+  background-color: $deep-sky-blue;
+  border-radius: 3px;
+  text-decoration: none;
+  color: $alice-blue-deep;
+  font-family: "RobotoCondensed", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 18px 27px;
+
+  @media (max-width: $vp-767) {
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 5%;
+    padding: 12px 37px;
+  }
+}
+
+.button__advise span:hover {
+  background-color: $black-pearl;
+  color: $iron;
+  border-radius: 3px;
+}
+
+.button__advise span:nth-child(2n+1) {
+  @media (max-width: $vp-767) {
+    display: none;
+  }
+}
+
+.button__advise span:nth-child(3n+2) {
+  @media (min-width: $vp-768) {
+    display: none;
+  }
 }
