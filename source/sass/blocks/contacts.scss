@@ -41,6 +41,16 @@
   height: 35px;
 }
 
+.contacts__link:hover::before {
+  transform: scale(1.2);
+}
+
+.contacts__link:active::before {
+  transform: scale(1.2);
+  border: 1px solid $alice-blue-deep;
+  border-radius: 2px;
+}
+
 .contacts__link--mail::before {
   background: url("../img/svg/email.svg") no-repeat center;
 }

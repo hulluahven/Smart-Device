@@ -16,7 +16,14 @@
 
 .logo__text {
   fill: $deep-sky-blue;
+  cursor: pointer;
 
+  @media (max-width: $vp-767) {
+    // display: none;
+  }
+}
+
+.logo__text--header {
   @media (max-width: $vp-767) {
     display: none;
   }
@@ -33,10 +40,12 @@
 }
 
 
-.logo__text:hover {
+.logo__text:hover,
+.logo__brain:hover {
   fill: $iron;
 }
 
-.logo__text:active {
+.logo__text:active,
+.logo__brain:active {
   fill: $alice-blue;
 }

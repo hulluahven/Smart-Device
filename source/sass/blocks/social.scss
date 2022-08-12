@@ -1,0 +1,74 @@
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 36px;
+  padding-right: 49px;
+  padding-left: 16px;
+  justify-content: space-between;
+
+  @media (max-width: $vp-1023) {
+    padding-top: 10px;
+    padding-right: 5px;
+    display: grid;
+    grid-template-columns: repeat(3, 25px);
+    gap: 30px;
+  }
+
+  @media (max-width: $vp-767) {
+    padding-top: 20px;
+    padding-right: 15px;
+  }
+}
+
+.social__item {
+  @media (max-width: $vp-1023) {
+    display: flex;
+    box-sizing: border-box;
+  }
+}
+
+.social__link {
+  font-size: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+// .social__link::before {
+//   content: "";
+//   position: absolute;
+//   width: 40px;
+//   height: 40px;
+// }
+
+.social__link--pinterest {
+
+}
+
+.social__link--odnoklassniki {
+  // cursor: pointer;
+}
+
+// .social__link--odnoklassniki svg {
+//   fill: $alice-blue-shade;
+// }
+
+.social__link svg {
+  fill: $alice-blue-shade;
+}
+
+// .social__link--odnoklassniki:hover svg {
+//   fill: $deep-sky-blue;
+//   transform: scale(1.2);
+// }
+
+.social__link:hover svg {
+  fill: $deep-sky-blue;
+  transform: scale(1.2);
+}
+
+.social__link--vkontakte {
+
+}
