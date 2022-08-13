@@ -17,10 +17,6 @@
 .logo__text {
   fill: $deep-sky-blue;
   cursor: pointer;
-
-  @media (max-width: $vp-767) {
-    // display: none;
-  }
 }
 
 .logo__text--header {
