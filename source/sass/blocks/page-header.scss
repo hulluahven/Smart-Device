@@ -3,6 +3,7 @@
   box-shadow: $shadow;
   position: fixed;
   width: 100%;
+  z-index: 10;
 
   @media (max-width: $vp-1023) {
     position: absolute;

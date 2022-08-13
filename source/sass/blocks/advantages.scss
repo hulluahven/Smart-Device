@@ -1,0 +1,31 @@
+.advantages {
+  background-color: $alice-blue-shade;
+}
+
+.advantages__wrapper {
+  max-width: 1260px;
+  margin: 0 auto;
+}
+
+.advantages__wrapper h2 {
+  font-size: 0;
+}
+
+.advantages__list-wrapper {
+  display: flex;
+  padding-top: 122px;
+
+  @media (max-width: $vp-1023) {
+    padding-top: 80px;
+  }
+
+  @media (max-width: $vp-767) {
+    padding-top: 49px;
+  }
+}
+
+.advantages__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
