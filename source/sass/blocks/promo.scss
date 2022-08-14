@@ -8,16 +8,16 @@
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
-  background: $pearl-new-gradient, url("../../img/back-desktop.png") no-repeat center;
+  background: $pearl-new-gradient, url("../img/back-desktop.png") no-repeat center;
   background-size: cover;
 
   @media (max-width: $vp-1023) {
-    background: $pearl-new-gradient, url("../../img/back-tablet.png") no-repeat center;
+    background: $pearl-new-gradient, url("../img/back-tablet.png") no-repeat center;
     background-size: cover;
   }
 
   @media (max-width: $vp-767) {
-    background: $pearl-new-gradient, url("../../img/back-mobile.png") no-repeat center;
+    background: $pearl-new-gradient, url("../img/back-mobile.png") no-repeat center;
     background-size: cover;
   }
 }
