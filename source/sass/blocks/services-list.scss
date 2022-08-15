@@ -1,0 +1,26 @@
+.services-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 53px;
+  padding-left: 0;
+
+  @media (max-width: $vp-1200) {
+    justify-content: center;
+  }
+
+  @media (max-width: $vp-1023) {
+    padding: 39px 0 0;
+  }
+
+  @media (max-width: $vp-767) {
+    padding: 30px 0 100px;
+  }
+}
+
+.services-list__item {
+  margin: 0 18px 30px 18px;
+}
