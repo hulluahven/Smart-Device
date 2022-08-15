@@ -1,5 +1,13 @@
 .about {
   background-color: $alice-blue-shade;
+
+  @media (max-width: $vp-1023) {
+    padding-bottom: 16px;
+  }
+
+  @media (max-width: $vp-767) {
+    padding-bottom: 0;
+  }
 }
 
 .about__wrapper {
