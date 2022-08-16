@@ -1,5 +1,14 @@
 .catalog {
   background-color: $black-pearl;
+  padding-bottom: 110px;
+
+  @media (max-width: $vp-1023) {
+    padding-bottom: 44px;
+  }
+
+  @media (max-width: $vp-767) {
+    padding-bottom: 0;
+  }
 }
 
 .catalog__wrapper {

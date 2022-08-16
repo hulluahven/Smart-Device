@@ -227,6 +227,48 @@
             </div>
           </div>
         </section>
+        <section class="feedback">
+          <div class="feedback__container">
+          <div class="feedback__wrapper">
+            <div class="feedback__content-container">
+            <div class="feedback__title-container">
+              <h2>Остались вопросы? Задайте их нам!</h2>
+              <p>Мы проконсультируем Вас бесплатно</p>
+            </div>
+            <div class="feedback__form-container">
+              <form method="POST" action="https://echo.htmlacademy.ru/" autocomplete="off">
+                <fieldset>
+                  <ul>
+                    <li data-name>
+                      <label for="name">
+                      </label>
+                      <input data-string  id="name" type="text" name="name" placeholder="Имя" required>
+                    </li>
+                    <li data-phone>
+                      <label for="phone-number">
+                      </label>
+                      <input data-string  id="phone-number" type="tel" name="phone" placeholder="Телефон" required>
+                    </li>
+                    <li data-area>
+                      <label for="question-text">
+                      </label>
+                      <textarea data-string data-text id="question-text" rows="10" cols="45" name="text" placeholder="Ваш вопрос"></textarea>
+                    </li>
+                  </ul>
+                </fieldset>
+            <div>
+              <div>
+                <input data-confirm id="personal-data" type="checkbox" name="data" required checked>
+                <label data-label for="personal-data">Я согласен на обработку<br> персональных данных</label>
+              </div>
+                <button submit-button type="submit">Задать вопрос</button>
+            </div>
+            </form>
+            </div>
+          </div>
+          </div>
+        </div>
+        </section>
       </main>
       <footer class="page-footer footer">
         <div class="footer__container footer__container--no-js" data-container>
