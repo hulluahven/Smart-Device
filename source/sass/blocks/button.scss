@@ -1,9 +1,11 @@
 .button__call {
   display: inline-block;
-  border: 1px solid  rgba(242, 245, 246, 1);
+  vertical-align: middle;
+  border: 1px solid $shade-alice-shade;
   border-radius: 3px;
   text-decoration: none;
   color: $alice-blue;
+  background-color: $black-pearl;
   font-family: "RobotoCondensed", "Arial", sans-serif;
   font-weight: 700;
   font-size: 14px;
@@ -11,6 +13,7 @@
   letter-spacing: 0.4px;
   text-transform: uppercase;
   padding: 11px 18px;
+  cursor: pointer;
 
   @media (max-width: $vp-1023) {
     display: none;
