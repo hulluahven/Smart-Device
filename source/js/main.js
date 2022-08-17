@@ -5,19 +5,27 @@ const footerContainer = document.querySelector('[data-container]');
 const mainNav = document.querySelector('[data-nav]');
 const contactsFeild = document.querySelector('[data-contacts]');
 const accordeonButton = document.querySelectorAll('[data-button]');
-const navButton = document.querySelector('[nav-button]');
-const contactsButton = document.querySelector('[contacts-button]');
+const navButton = document.querySelector('[data-nav]');
+const contactsButton = document.querySelector('[data-contacts]');
+const closeButton = document.querySelector('[data-close]');
+const userPhones = document.querySelectorAll('input[data-user-number]');
+const callOffer = document.querySelector('[data-modal]');
+const pageBody = document.querySelector('[data-body]');
+const popUpForm = document.querySelector('[data-message]');
+const nameField = popUpForm.querySelector('[data-user]');
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
 
   // Utils
   // ---------------------------------
-
   iosVhFix();
 
   // Modules
-  // ---------------------------------
+  // --
+
+  // Аккордеон
+
   footerContainer.classList.remove('footer__container--no-js');
   mainNav.classList.remove('main-nav--no-js');
   contactsFeild.classList.remove('footer__contacts-wrapper--no-js');
@@ -37,9 +45,122 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Маска для телефона
+
+  let getInputNumbersValue = function (input) {
+    return input.value.replace(/\D/g, '');
+  };
+
+  if (userPhones) {
+
+    userPhones.forEach(function (el) {
+      el.addEventListener('input', function (e) {
+        const input = e.target;
+        const inputNumbersValue = getInputNumbersValue(input);
+
+        let formatedInputValue = ' ';
+
+        if (!inputNumbersValue) {
+          input.value = ' ';
+        }
+        if (['7', '8', '9'].indexOf(inputNumbersValue[0]) > -1) {
+          // для российского формата номера
+
+          let firstSymbols = '+7';
+
+          formatedInputValue = firstSymbols;
+
+          if (inputNumbersValue.length > 1) {
+            formatedInputValue += ' (' + inputNumbersValue.substring(1, 4);
+          }
+
+          if (inputNumbersValue.length >= 5) {
+            formatedInputValue += ') ' + inputNumbersValue.substring(4, 7);
+          }
+
+          if (inputNumbersValue.length >= 8) {
+            formatedInputValue += '-' + inputNumbersValue.substring(7, 9);
+          }
+
+          if (inputNumbersValue.length >= 10) {
+            formatedInputValue += '-' + inputNumbersValue.substring(9, 11);
+          }
+        } else {
+          // для форматов номера других стран
+
+          formatedInputValue = '+' + inputNumbersValue.substring(0, 16);
+        }
+
+        input.value = formatedInputValue;
+        return formatedInputValue;
+      });
+    });
+
+    const onNumberKeyDown = function (e) {
+      const input = e.target;
+      if (e.keyCode === 8 && getInputNumbersValue(input).length === 1) {
+        input.value = '';
+      }
+    };
+
+    userPhones.forEach(function (el) {
+      el.addEventListener('keydown', onNumberKeyDown);
+    });
+  }
+
+  // для Pop-up
+
+  const closeMessage = () => {
+    const removeListener = () => {
+      document.removeEventListener('keydown', onPopupEscapeKeydown);
+      popUpForm.removeEventListener('click', onClickMessage);
+      closeButton.removeEventListener('click', onClickMessage);
+    };
+
+    const addEventListener = () => {
+      window.addEventListener('keydown', onPopupEscapeKeydown);
+      popUpForm.addEventListener('click', onClickMessage);
+      closeButton.addEventListener('click', onClickMessage);
+    };
+
+    const onPopupEscapeKeydown = function (e) {
+      if (e.keyCode === 27) {
+        if (popUpForm && popUpForm.classList.contains('is-open')) {
+          popUpForm.classList.remove('is-open');
+          pageBody.classList.remove('is-hidden');
+        }
+
+      }
+    };
+
+    function onClickMessage(e) {
+      if (e.target === popUpForm || e.target === closeButton) {
+        removeListener();
+        if (popUpForm && popUpForm.classList.contains('is-open')) {
+          popUpForm.classList.remove('is-open');
+          pageBody.classList.remove('is-hidden');
+        }
+      } else {
+        addEventListener();
+      }
+    }
+    addEventListener();
+  };
+
+  callOffer.addEventListener('click', function () {
+    closeMessage();
+    if (popUpForm && popUpForm.classList.contains('is-open')) {
+      popUpForm.classList.remove('is-open');
+      pageBody.classList.remove('is-hidden');
+    } else {
+      popUpForm.classList.add('is-open');
+      pageBody.classList.add('is-hidden');
+      nameField.focus();
+    }
+  });
+
 });
-
-
 // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
 // в load следует добавить скрипты, не участвующие в работе первого экрана
 window.addEventListener('load', () => {

@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   padding-top: 36px;
-  padding-right: 49px;
+  padding-right: 55px;
   padding-left: 16px;
   justify-content: space-between;
 
@@ -36,39 +36,11 @@
   cursor: pointer;
 }
 
-// .social__link::before {
-//   content: "";
-//   position: absolute;
-//   width: 40px;
-//   height: 40px;
-// }
-
-// .social__link--pinterest {
-
-// }
-
-// .social__link--odnoklassniki {
-//   // cursor: pointer;
-// }
-
-// .social__link--odnoklassniki svg {
-//   fill: $alice-blue-shade;
-// }
-
 .social__link svg {
   fill: $alice-blue-shade;
 }
-
-// .social__link--odnoklassniki:hover svg {
-//   fill: $deep-sky-blue;
-//   transform: scale(1.2);
-// }
 
 .social__link:hover svg {
   fill: $deep-sky-blue;
   transform: scale(1.2);
 }
-
-// .social__link--vkontakte {
-
-// }

@@ -65,9 +65,7 @@
           </div>
           </div>
           <div class="page-header__button button">
-            <a class="button__call" href="#">
-              Заказать звонок
-            </a>
+            <button class="button__call" type="button" data-modal>Заказать звонок</button>
           </div>
         </div>
       </header>
@@ -78,7 +76,7 @@
               <h1>Печатные платы</h1>
               <p>производство и монтаж, поставка комплектующих, <br>блоков и модулей</p>
               <div class="promo__button button">
-                <a class="button__advise" href="#">
+                <a class="button__advise" href="#advise">
                   <span>Получить бесплатную консультацию</span>
                   <span>бесплатная консультация</span>
                 </a>
@@ -151,7 +149,7 @@
                   Использование инновационных технологий помогает экономить деньги и время наших клиентов
                 </p>
             </div>
-          <label class="about__text-button" for="read-more"></label>
+          <label class="about__text-button" for="read-more" aria-label="Развернуть/Свернуть текст"></label>
           </div>
           </div>
         </section>
@@ -227,7 +225,7 @@
             </div>
           </div>
         </section>
-        <section class="feedback">
+        <section class="feedback" id="advise">
           <div class="feedback__container">
           <div class="feedback__wrapper">
             <div class="feedback__content-container">
@@ -247,7 +245,7 @@
                     <li data-phone>
                       <label for="phone-number">
                       </label>
-                      <input data-string  id="phone-number" type="tel" name="phone" placeholder="Телефон" required>
+                      <input data-string data-user-number id="phone-number" type="tel" name="phone" placeholder="Телефон" maxlength="20" required>
                     </li>
                     <li data-area>
                       <label for="question-text">
@@ -256,13 +254,13 @@
                     </li>
                   </ul>
                 </fieldset>
-             <div>
+            <div>
               <div>
-                <input data-confirm id="personal-data" type="checkbox" name="data" required checked>
-                <label data-label for="personal-data">Я согласен на обработку<br> персональных данных</label>
+                <input data-confirm id="personal-data-feedback" type="checkbox" name="data" required checked>
+                <label data-label for="personal-data-feedback">Я согласен на обработку<br> персональных данных</label>
               </div>
-                <button submit-button type="submit">Задать вопрос</button>
-             </div>
+                <button data-submit type="submit">Задать вопрос</button>
+            </div>
             </form>
             </div>
           </div>
@@ -308,7 +306,7 @@
           <div class="footer__nav-wrapper">
             <div class="footer__nav-header">
               <p>Разделы сайта</p>
-              <button class="footer__accordeon-button" data-button nav-button>Открыть/закрыть раздел</button>
+              <button class="footer__accordeon-button" data-button data-nav>Открыть/закрыть раздел</button>
             </div>
             <nav class="footer__nav main-nav main-nav--no-js" data-nav data-accordeon>
               <ul class="main-nav__list">
@@ -339,7 +337,7 @@
           <div class="footer__address-wrapper">
           <div class="footer__address-header">
             <p>Наш офис</p>
-            <button class="footer__accordeon-button" data-button contacts-button>Открыть/закрыть раздел</button>
+            <button class="footer__accordeon-button" data-button data-contacts>Открыть/закрыть раздел</button>
           </div>
           <div class="footer__contacts-wrapper footer__contacts-wrapper--no-js" data-contacts data-accordeon>
             <address>г. Мытищи, Олимпийский проспект,<br> д.10</address>
@@ -352,6 +350,47 @@
           </div>
         </div>
       </footer>
+      <section class="modal">
+        <div class="modal__wrapper" data-message>
+        <div class="modal__content-container" data-modal>
+          <div class="modal__title-container">
+            <h2>Закажите звонок</h2>
+            <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
+          </div>
+          <div class="modal__form-container">
+            <form method="POST" action="https://echo.htmlacademy.ru/" autocomplete="off">
+              <fieldset>
+                <ul>
+                    <li data-modal-name>
+                    <label for="name-modal">
+                    </label>
+                    <input data-string data-user id="name-modal" type="text" name="name" placeholder="Имя" required>
+                  </li>
+                  <li data-modal-phone>
+                    <label for="phone-number-modal">
+                    </label>
+                    <input data-string data-user-number id="phone-number-modal" type="tel" name="phone" placeholder="Телефон" maxlength="20" required>
+                  </li>
+                  <li data-modal-area>
+                    <label for="question-text-modal">
+                    </label>
+                    <textarea data-string data-text id="question-text-modal" rows="10" cols="45" name="text" placeholder="Ваш вопрос"></textarea>
+                  </li>
+                </ul>
+              </fieldset>
+          <div>
+            <div>
+              <input data-confirm id="personal-data-modal" type="checkbox" name="data" required checked>
+              <label data-label for="personal-data-modal">Я согласен на обработку персональных данных</label>
+            </div>
+              <button data-submit type="submit">Отправить</button>
+          </div>
+          </form>
+          <button data-close type="button">Закрыть</button>
+          </div>
+        </div>
+        </div>
+      </section>
     </div>
     <script src="js/vendor.min.js"></script>
     <script src="js/main.min.js"></script>

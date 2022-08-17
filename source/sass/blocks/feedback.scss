@@ -44,12 +44,13 @@
   flex-direction: column;
   width: 50%;
   padding-top: 134px;
-  padding-bottom: 196px;
+  padding-bottom: 203px;
 
 
   @media (max-width: $vp-1023) {
     width: 100%;
     padding-top: 13px;
+    padding-bottom: 72px;
   }
 
   @media (max-width: $vp-767) {
@@ -115,6 +116,7 @@
   padding: 0;
   list-style: none;
   display: grid;
+  grid-template-columns: 52% 48%;
   grid-template-areas:
     "name phone"
     "text text";
@@ -145,11 +147,13 @@
 
   @media (max-width: $vp-1023) {
     grid-template-columns: 40% 54%;
+    padding-top: 8px;
   }
 
   @media (max-width: $vp-767) {
     display: flex;
     flex-direction: column-reverse;
+    padding-top: 5px;
   }
 }
 
@@ -160,7 +164,7 @@
     padding: 3.1% 6.5% 7% 6.2%;
   }
 
-  @media (max-width: $vp-1023) {
+  @media (max-width: $vp-767) {
     padding: 10.1% 7.5% 7% 7.2%;
   }
 }
@@ -176,7 +180,8 @@
   border: 0;
   box-sizing: border-box;
   height: 49px;
-  padding: 0 0 0 13px;
+  padding: 0 0 0 15px;
+  color: $color-default-white;
 }
 
 .feedback__content-container [data-string]::-moz-placeholder {
@@ -192,6 +197,10 @@
   padding: 21px 0 0 14px;
 
   @media (max-width: $vp-1023) {
+    padding: 31px 0 0 14px;
+  }
+
+  @media (max-width: $vp-767) {
     padding: 23px 0 0 14px;
     height: 180px;
   }
@@ -204,6 +213,7 @@
   line-height: 16px;
   color: $shade-white;
   cursor: pointer;
+  position: relative;
 }
 
 .feedback__form-container label:hover {
@@ -216,12 +226,12 @@
   position: relative;
   display: grid;
   grid-template-columns: 30px 1fr;
-  column-gap: 10px;
+  column-gap: 13px;
   grid-column: 2;
   grid-row: 1;
 
   @media (max-width: $vp-1023) {
-    padding-left: 19%;
+    padding-left: 18%;
     padding-top: 3.3%;
     padding-bottom: 2px;
   }
@@ -230,6 +240,7 @@
     grid-template-columns: 23px 1fr;
     padding-left: 0;
     padding-top: 9.3%;
+    column-gap: 10px;
   }
 }
 
@@ -258,8 +269,8 @@
 [data-confirm] + [data-label]::before {
   content: "";
   position: absolute;
-  left: 16%;
-  top: 45%;
+  left: -28px;
+  top: 8px;
   width: 15px;
   height: 15px;
   background-color: transparent;
@@ -269,21 +280,21 @@
   z-index: 1;
 
   @media (max-width: $vp-1023) {
-    left: 23%;
-    top: 39%;
+    left: -25px;
+    top: 7px;
   }
 
   @media (max-width: $vp-767) {
-    left: 3%;
-    top: 51%;
+    left: -26px;
+    top: 6px;
   }
 }
 
 [data-confirm] + [data-label]::after {
   content: "";
   position: absolute;
-  left: 17%;
-  top: 50%;
+  left: -25px;
+  top: 10px;
   width: 8px;
   height: 7px;
   box-sizing: border-box;
@@ -294,23 +305,23 @@
   display: none;
 
   @media (max-width: $vp-1023) {
-    left: 24%;
-    top: 44%;
+    left: -22px;
+    top: 10px;
     width: 6px;
     height: 6px;
   }
 
   @media (max-width: $vp-767) {
-    left: 4.4%;
-    top: 56%;
+    left: -22px;
+    top: 9px;
   }
 }
 
 [data-confirm]:checked + [data-label]::after {
   content: "";
   position: absolute;
-  left: 17%;
-  top: 50%;
+  left: -25px;
+  top: 10px;
   width: 8px;
   height: 7px;
   box-sizing: border-box;
@@ -321,15 +332,15 @@
   display: block;
 
   @media (max-width: $vp-1023) {
-    left: 24%;
-    top: 44%;
+    left: -22px;
+    top: 10px;
     width: 6px;
     height: 6px;
   }
 
   @media (max-width: $vp-767) {
-    left: 4.4%;
-    top: 56%;
+    left: -22px;
+    top: 9px;
   }
 }
 
@@ -343,7 +354,7 @@
   cursor: pointer;
 }
 
-[submit-button] {
+[data-submit] {
   display: inline-block;
   border: 1px solid transparent;
   border-radius: 3px;
@@ -371,19 +382,19 @@
   }
 }
 
-[submit-button]:hover {
+[data-submit]:hover {
   color: $black-pearl;
   background-color: $iron;
   outline: 2px solid $black-pearl;
 }
 
-[submit-button]:focus {
+[data-submit]:focus {
   color: $black-pearl;
   background-color: $iron;
   outline: 2px solid $black-pearl;
 }
 
-[submit-button]:active {
+[data-submit]:active {
   color: $black-pearl;
   background-color: $iron;
   outline: 2px solid $black-pearl;
