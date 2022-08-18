@@ -309,10 +309,10 @@
   border-bottom: 1px solid $deep-sky-blue;
 }
 
-[nav-button].is-opened::after {
+[data-nav-button].is-opened::after {
   display: none;
 }
 
-[contacts-button].is-opened::after {
+[data-contacts-button].is-opened::after {
   display: none;
 }

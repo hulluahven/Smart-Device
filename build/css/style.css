@@ -817,11 +817,11 @@ template {
   border-bottom: 1px solid #00b2ff;
 }
 
-[nav-button].is-opened::after {
+[data-nav-button].is-opened::after {
   display: none;
 }
 
-[contacts-button].is-opened::after {
+[data-contacts].is-opened::after {
   display: none;
 }
 
