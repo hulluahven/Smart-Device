@@ -29,7 +29,6 @@
   }
 }
 
-
 .footer__container--no-js button {
   display: none;
 }
@@ -309,10 +308,6 @@
   border-bottom: 1px solid $deep-sky-blue;
 }
 
-[data-nav-button].is-opened::after {
-  display: none;
-}
-
-[data-contacts-button].is-opened::after {
+.footer__accordeon-button.is-opened::after {
   display: none;
 }

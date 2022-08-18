@@ -237,27 +237,34 @@
               <form method="POST" action="https://echo.htmlacademy.ru/" autocomplete="off">
                 <fieldset>
                   <ul>
-                    <li data-name>
-                      <label for="name">
-                      </label>
-                      <input data-string  id="name" type="text" name="name" placeholder="Имя" required>
+                    <!-- <li data-name> -->
+                      <li>
+                      <div class="feedback__string-wrapper feedback__string-wrapper--name">
+                        <label for="name">
+                        </label>
+                        <input id="name" type="text" name="name" placeholder="Имя" required>
+                      </div>
                     </li>
-                    <li data-phone>
-                      <label for="phone-number">
-                      </label>
-                      <input data-string data-user-number id="phone-number" type="tel" name="phone" placeholder="Телефон" maxlength="20" required>
+                      <li>
+                      <div class="feedback__string-wrapper feedback__string-wrapper--phone">
+                        <label for="phone-number">
+                        </label>
+                        <input id="phone-number" type="tel" name="phone" placeholder="Телефон" maxlength="20" required>
+                      </div>
                     </li>
-                    <li data-area>
-                      <label for="question-text">
-                      </label>
-                      <textarea data-string data-text id="question-text" rows="10" cols="45" name="text" placeholder="Ваш вопрос"></textarea>
+                      <li>
+                      <div class="feedback__string-wrapper feedback__string-wrapper--text">
+                        <label for="question-text">
+                        </label>
+                        <textarea id="question-text" rows="10" cols="45" name="text" placeholder="Ваш вопрос"></textarea>
+                      </div>
                     </li>
                   </ul>
                 </fieldset>
             <div>
-              <div>
-                <input data-confirm id="personal-data-feedback" type="checkbox" name="data" required checked>
-                <label data-label for="personal-data-feedback">Я согласен на обработку<br> персональных данных</label>
+              <div class="feedback__checkbox-container">
+                <input id="personal-data-feedback" type="checkbox" name="data" required checked>
+                <label for="personal-data-feedback">Я согласен на обработку<br> персональных данных</label>
               </div>
                 <button data-submit type="submit">Задать вопрос</button>
             </div>
@@ -271,9 +278,11 @@
       <footer class="page-footer footer">
         <div class="footer__container footer__container--no-js" data-container>
           <div class="footer__logo-wrapper">
-            <svg class="logo__text logo__text--footer" width="215" height="55">
-              <use xlink:href="#logo-full"></use>
-            </svg>
+            <a class="footer__logo logo logo--footer" href="#">Логотип
+              <svg class="logo__text logo__text--footer" width="215" height="55">
+                <use xlink:href="#logo-full"></use>
+              </svg>
+            </a>
             <ul class="footer__social social">
               <li class="social__item">
                 <a class="social__link social__link--pinterest">
@@ -308,7 +317,7 @@
               <p>Разделы сайта</p>
               <button class="footer__accordeon-button" data-button data-nav-button>Открыть/закрыть раздел</button>
             </div>
-            <nav class="footer__nav main-nav main-nav--no-js" data-nav data-accordeon>
+            <nav class="footer__nav main-nav main-nav--no-js" data-nav>
               <ul class="main-nav__list">
                 <li class="main-nav__item">
                   <a class="main-nav__link" href="#">О Компаниии</a>
@@ -339,7 +348,7 @@
             <p>Наш офис</p>
             <button class="footer__accordeon-button" data-button data-contacts-button>Открыть/закрыть раздел</button>
           </div>
-          <div class="footer__contacts-wrapper footer__contacts-wrapper--no-js" data-contacts data-accordeon>
+          <div class="footer__contacts-wrapper footer__contacts-wrapper--no-js" data-contacts>
             <address>г. Мытищи, Олимпийский проспект,<br> д.10</address>
             <div class="footer__phone-wrapper">
               <a href="tel:84955894050">+7 (495) 589-40-50</a>
@@ -361,32 +370,40 @@
             <form method="POST" action="https://echo.htmlacademy.ru/" autocomplete="off">
               <fieldset>
                 <ul>
-                    <li data-modal-name>
+                  <li>
+                  <div class="modal__string-wrapper">
                     <label for="name-modal">
                     </label>
-                    <input data-string data-user id="name-modal" type="text" name="name" placeholder="Имя" required>
+                    <input id="name-modal" type="text" name="name" placeholder="Имя" required>
+                  </div>
                   </li>
-                  <li data-modal-phone>
-                    <label for="phone-number-modal">
-                    </label>
-                    <input data-string data-user-number id="phone-number-modal" type="tel" name="phone" placeholder="Телефон" maxlength="20" required>
+                  <li>
+                    <div class="modal__string-wrapper">
+                      <label for="phone-number-modal">
+                      </label>
+                      <input id="phone-number-modal" type="tel" name="phone" placeholder="Телефон" maxlength="20" required>
+                    </div>
                   </li>
-                  <li data-modal-area>
-                    <label for="question-text-modal">
-                    </label>
-                    <textarea data-string data-text id="question-text-modal" rows="10" cols="45" name="text" placeholder="Ваш вопрос"></textarea>
+                  <li>
+                    <div class="modal__string-wrapper">
+                      <label for="question-text-modal">
+                      </label>
+                      <textarea id="question-text-modal" rows="10" cols="45" name="text" placeholder="Ваш вопрос"></textarea>
+                    </div>
                   </li>
                 </ul>
               </fieldset>
-          <div>
-            <div>
-              <input data-confirm id="personal-data-modal" type="checkbox" name="data" required checked>
-              <label data-label for="personal-data-modal">Я согласен на обработку персональных данных</label>
+              <div class="modal__submit-wrapper">
+                <div class="modal__checkbox-container">
+                  <input id="personal-data-modal" type="checkbox" name="data" required checked>
+                  <label for="personal-data-modal">Я согласен на обработку персональных данных</label>
+                </div>
+                  <button data-submit type="submit">Отправить</button>
+              </div>
+            </form>
+            <div class="modal__button-wrapper">
+              <button data-close type="button">Закрыть</button>
             </div>
-              <button data-submit type="submit">Отправить</button>
-          </div>
-          </form>
-          <button data-close type="button">Закрыть</button>
           </div>
         </div>
         </div>

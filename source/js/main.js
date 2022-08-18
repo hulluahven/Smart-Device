@@ -8,11 +8,11 @@ const accordeonButton = document.querySelectorAll('[data-button]');
 const navButton = document.querySelector('[data-nav-button]');
 const contactsButton = document.querySelector('[data-contacts-button]');
 const closeButton = document.querySelector('[data-close]');
-const userPhones = document.querySelectorAll('input[data-user-number]');
+const userPhones = document.querySelectorAll('input[type=tel]');
 const callOffer = document.querySelector('[data-modal]');
 const pageBody = document.querySelector('[data-body]');
 const popUpForm = document.querySelector('[data-message]');
-const nameField = popUpForm.querySelector('[data-user]');
+const nameField = popUpForm.querySelector('input[type=text]');
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -26,25 +26,33 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Аккордеон
 
-  footerContainer.classList.remove('footer__container--no-js');
-  mainNav.classList.remove('main-nav--no-js');
-  contactsFeild.classList.remove('footer__contacts-wrapper--no-js');
+  if (footerContainer) {
+    footerContainer.classList.remove('footer__container--no-js');
+  }
+  if (mainNav) {
+    mainNav.classList.remove('main-nav--no-js');
+  }
+  if (contactsFeild) {
+    contactsFeild.classList.remove('footer__contacts-wrapper--no-js');
+  }
 
-  accordeonButton.forEach((button) => {
-    button.addEventListener('click', () => {
-      if (mainNav && mainNav.classList.contains('is-opened')) {
-        mainNav.classList.remove('is-opened');
-        navButton.classList.remove('is-opened');
-        contactsFeild.classList.add('is-opened');
-        contactsButton.classList.add('is-opened');
-      } else {
-        contactsFeild.classList.remove('is-opened');
-        contactsButton.classList.remove('is-opened');
-        mainNav.classList.add('is-opened');
-        navButton.classList.add('is-opened');
-      }
+  if (accordeonButton) {
+    accordeonButton.forEach((button) => {
+      button.addEventListener('click', () => {
+        if (mainNav && mainNav.classList.contains('is-opened') && navButton) {
+          mainNav.classList.remove('is-opened');
+          navButton.classList.remove('is-opened');
+          contactsFeild.classList.add('is-opened');
+          contactsButton.classList.add('is-opened');
+        } else {
+          contactsFeild.classList.remove('is-opened');
+          contactsButton.classList.remove('is-opened');
+          mainNav.classList.add('is-opened');
+          navButton.classList.add('is-opened');
+        }
+      });
     });
-  });
+  }
 
   // Маска для телефона
 
@@ -53,7 +61,6 @@ window.addEventListener('DOMContentLoaded', () => {
   };
 
   if (userPhones) {
-
     userPhones.forEach(function (el) {
       el.addEventListener('input', function (e) {
         const input = e.target;
@@ -113,9 +120,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const closeMessage = () => {
     const removeListener = () => {
-      document.removeEventListener('keydown', onPopupEscapeKeydown);
-      popUpForm.removeEventListener('click', onClickMessage);
-      closeButton.removeEventListener('click', onClickMessage);
+      if (closeButton) {
+        document.removeEventListener('keydown', onPopupEscapeKeydown);
+        popUpForm.removeEventListener('click', onClickMessage);
+        closeButton.removeEventListener('click', onClickMessage);
+      }
     };
 
     const addEventListener = () => {
@@ -148,17 +157,19 @@ window.addEventListener('DOMContentLoaded', () => {
     addEventListener();
   };
 
-  callOffer.addEventListener('click', function () {
-    closeMessage();
-    if (popUpForm && popUpForm.classList.contains('is-open')) {
-      popUpForm.classList.remove('is-open');
-      pageBody.classList.remove('is-hidden');
-    } else {
-      popUpForm.classList.add('is-open');
-      pageBody.classList.add('is-hidden');
-      nameField.focus();
-    }
-  });
+  if (callOffer) {
+    callOffer.addEventListener('click', function () {
+      closeMessage();
+      if (popUpForm && popUpForm.classList.contains('is-open')) {
+        popUpForm.classList.remove('is-open');
+        pageBody.classList.remove('is-hidden');
+      } else {
+        popUpForm.classList.add('is-open');
+        pageBody.classList.add('is-hidden');
+        nameField.focus();
+      }
+    });
+  }
 
 });
 // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'

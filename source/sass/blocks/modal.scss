@@ -1,14 +1,14 @@
 
-[data-message] {
+.modal__wrapper {
   top: 2px;
   position: fixed;
   width: 99.3%;
-  background: rgba(3, 16, 27, 0.7);
+  background: $pearl-shadow;
   display: none;
   justify-content: center;
 }
 
-[data-message].is-open {
+.modal__wrapper.is-open {
   display: flex;
   z-index: 100;
 }
@@ -40,7 +40,6 @@
   margin: 0;
 }
 
-
 .modal__title-container p {
   font-family: "PTMono", "Arial", sans-serif;
   font-weight: 400;
@@ -52,7 +51,6 @@
   padding-left: 0;
   padding-right: 59px;
 }
-
 
 .modal__form-container ul {
   margin: 0;
@@ -83,8 +81,8 @@
   padding: 7.6% 8.1% 7% 7.5%;
 }
 
-
-.modal__form-container [data-string] {
+.modal__form-container input,
+textarea {
   font-family: "PTMono", "Arial", sans-serif;
   width: 100%;
   font-size: 16px;
@@ -98,15 +96,23 @@
   color: $color-default-white;
 }
 
-.modal__content-container [data-string]::-moz-placeholder {
+.modal__content-container input::-moz-placeholder {
   color: $color-default-white;
 }
 
-.modal__content-container [data-string]::-webkit-input-placeholder {
+.modal__content-container textarea::-moz-placeholder {
   color: $color-default-white;
 }
 
-.modal__form-container [data-text] {
+.modal__content-container input::-webkit-input-placeholder {
+  color: $color-default-white;
+}
+
+.modal__content-container textarea::-webkit-input-placeholder {
+  color: $color-default-white;
+}
+
+.modal__form-container textarea {
   height: 152px;
   padding: 21px 0 0 14px;
 }
@@ -124,7 +130,7 @@
   color: $black-pearl;
 }
 
-.modal__form-container div:nth-child(2n+1) {
+.modal__checkbox-container {
   padding-left: 0;
   padding-top: 4.3%;
   position: relative;
@@ -135,21 +141,19 @@
   grid-row: 1;
 }
 
-
-.modal__form-container [data-modal-name] {
+.modal__form-container li {
   margin-right: 0;
 }
 
-
-.modal__form-container [modal-confirm] {
+.modal__checkbox-container input {
   opacity: 0;
 }
 
-.modal__form-container [data-confirm] + [data-label]::before {
+.modal__checkbox-container input + label::before {
   content: "";
   position: absolute;
-  left: 2%;
-  top: 54%;
+  left: 7px;
+  top: 19px;
   width: 15px;
   height: 15px;
   background-color: transparent;
@@ -159,11 +163,11 @@
   z-index: 1;
 }
 
-.modal__form-container [data-confirm] + [data-label]::after {
+.modal__checkbox-container input + label::after {
   content: "";
   position: absolute;
-  left: 3%;
-  top: 56%;
+  left: 11px;
+  top: 21px;
   width: 8px;
   height: 7px;
   box-sizing: border-box;
@@ -174,11 +178,11 @@
   display: none;
 }
 
-.modal__form-container [data-confirm]:checked + [data-label]::after {
+.modal__checkbox-container input:checked + label::after {
   content: "";
   position: absolute;
-  left: 3%;
-  top: 56%;
+  left: 11px;
+  top: 21px;
   width: 8px;
   height: 7px;
   box-sizing: border-box;
@@ -189,18 +193,19 @@
   display: block;
 }
 
-.modal__form-container [data-confirm]:hover + [data-label]::before {
+.modal__checkbox-container input:hover + label::before {
   border: 2px solid $black-pearl;
   cursor: pointer;
 }
 
-.modal__form-container [data-confirm]:focus + [data-label]::before {
+.modal__checkbox-container input:focus + label::before {
   border: 2px solid $black-pearl;
   cursor: pointer;
 }
 
-.modal__form-container [data-submit] {
+.modal__submit-wrapper button {
   display: inline-block;
+  vertical-align: middle;
   border: 1px solid transparent;
   border-radius: 3px;
   text-decoration: none;
@@ -219,26 +224,26 @@
   grid-row: 1;
 }
 
-.modal__form-container [data-submit]:hover {
+.modal__submit-wrapper button:hover {
   color: $black-pearl;
   background-color: $iron;
   outline: 2px solid $black-pearl;
 }
 
-.modal__form-container [data-submit]:focus {
+.modal__submit-wrapper button:focus {
   color: $black-pearl;
   background-color: $iron;
   outline: 2px solid $black-pearl;
 }
 
-.modal__form-container [data-submit]:active {
+.modal__submit-wrapper button:active {
   color: $black-pearl;
   background-color: $iron;
   outline: 2px solid $black-pearl;
   transform: scale(1.1);
 }
 
-.modal__form-container [data-close] {
+.modal__button-wrapper button {
   top: 17px;
   right: 16px;
   position: absolute;
@@ -250,7 +255,7 @@
   cursor: pointer;
 }
 
-.modal__form-container [data-close]::before {
+.modal__button-wrapper button::before {
   content: "";
   position: absolute;
   top: 17px;
@@ -261,7 +266,7 @@
   transform: rotate(45deg);
 }
 
-.modal__form-container [data-close]::after {
+.modal__button-wrapper button::after {
   content: "";
   position: absolute;
   top: 17px;
@@ -272,7 +277,7 @@
   transform: rotate(-45deg);
 }
 
-.modal__form-container [data-close]:hover {
+.modal__button-wrapper button:hover {
 
   transform: scale(1.5);
 
@@ -285,8 +290,7 @@
   }
 }
 
-
-.modal__form-container [data-close]:focus {
+.modal__button-wrapper button:focus {
 
   transform: scale(1.5);
 
@@ -299,8 +303,7 @@
   }
 }
 
-
-.modal__form-container [data-close]:active {
+.modal__button-wrapper button:active {
   &::after {
     background-color: $alice-blue-dark;
   }
