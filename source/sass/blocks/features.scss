@@ -134,7 +134,7 @@
 }
 
 .features__item-container--terms h3::before {
-  background: url("../../img/svg/stopwatchie.svg") no-repeat center;
+  background: url("../img/svg/stopwatchie.svg") no-repeat center;
   background-size: 60%;
 
   @media (max-width: $vp-767) {
@@ -143,7 +143,7 @@
 }
 
 .features__item:hover .features__item-container--terms h3::before {
-  background: url("../../img/svg/stopwatch.svg") no-repeat center;
+  background: url("../img/svg/stopwatch.svg") no-repeat center;
   background-size: 60%;
 
   @media (max-width: $vp-767) {
@@ -152,7 +152,7 @@
 }
 
 .features__item-container--dealers h3::before {
-  background: url("../../img/svg/hiredie.svg") no-repeat center;
+  background: url("../img/svg/hiredie.svg") no-repeat center;
   background-size: 60%;
 
   @media (max-width: $vp-767) {
@@ -170,7 +170,7 @@
 }
 
 .features__item-container--confidence h3::before {
-  background: url("../../img/svg/detectivie.svg") no-repeat center;
+  background: url("../img/svg/detectivie.svg") no-repeat center;
   background-size: 60%;
 
   @media (max-width: $vp-767) {
@@ -179,7 +179,7 @@
 }
 
 .features__item:hover .features__item-container--confidence h3::before {
-  background: url("../../img/svg/detective.svg") no-repeat center;
+  background: url("../img/svg/detective.svg") no-repeat center;
   background-size: 60%;
 
   @media (max-width: $vp-767) {
@@ -188,7 +188,7 @@
 }
 
 .features__item-container--price h3::before {
-  background: url("../../img/svg/tagie.svg") no-repeat center;
+  background: url("../img/svg/tagie.svg") no-repeat center;
   background-size: 60%;
 
   @media (max-width: $vp-767) {
@@ -197,7 +197,7 @@
 }
 
 .features__item:hover .features__item-container--price h3::before {
-  background: url("../../img/svg/tag.svg") no-repeat center;
+  background: url("../img/svg/tag.svg") no-repeat center;
   background-size: 60%;
 
   @media (max-width: $vp-767) {

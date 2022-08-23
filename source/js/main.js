@@ -13,6 +13,9 @@ const callOffer = document.querySelector('[data-modal]');
 const pageBody = document.querySelector('[data-body]');
 const popUpForm = document.querySelector('[data-message]');
 const nameField = popUpForm.querySelector('input[type=text]');
+const formFields = popUpForm.querySelectorAll('input');
+const confirmField = popUpForm.querySelector('input[type=checkbox]');
+const submitForm = popUpForm.querySelector('[data-submit]');
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -25,6 +28,8 @@ window.addEventListener('DOMContentLoaded', () => {
   // --
 
   // Аккордеон
+
+  // console.log(formFields)
 
   if (footerContainer) {
     footerContainer.classList.remove('footer__container--no-js');
@@ -71,7 +76,7 @@ window.addEventListener('DOMContentLoaded', () => {
         if (!inputNumbersValue) {
           input.value = ' ';
         }
-        if (['7', '8', '9'].indexOf(inputNumbersValue[0]) > -1) {
+        if (['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'].indexOf(inputNumbersValue[0]) > -1) {
           // для российского формата номера
 
           let firstSymbols = '+7';
@@ -93,11 +98,12 @@ window.addEventListener('DOMContentLoaded', () => {
           if (inputNumbersValue.length >= 10) {
             formatedInputValue += '-' + inputNumbersValue.substring(9, 11);
           }
-        } else {
-          // для форматов номера других стран
-
-          formatedInputValue = '+' + inputNumbersValue.substring(0, 16);
         }
+        // else {
+        //   // для форматов номера других стран
+
+        //   formatedInputValue = '+' + inputNumbersValue.substring(0, 16);
+        // }
 
         input.value = formatedInputValue;
         return formatedInputValue;
@@ -167,9 +173,19 @@ window.addEventListener('DOMContentLoaded', () => {
         popUpForm.classList.add('is-open');
         pageBody.classList.add('is-hidden');
         nameField.focus();
+        toLoopFocus();
       }
     });
   }
+
+  const toLoopFocus = () => {
+    document.addEventListener('focus', (evt) => {
+      if (evt.target === closeButton) {
+        evt.stopPropagation();
+        nameField.focus();
+      }
+    }, true);
+  };
 
 });
 // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'

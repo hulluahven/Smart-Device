@@ -1,6 +1,6 @@
 .page-header {
   background: $pearl-gradient;
-  box-shadow: $shadow;
+  // box-shadow: $shadow;
   position: fixed;
   width: 100%;
   z-index: 10;
@@ -15,7 +15,8 @@
   margin: 0 auto;
   display: flex;
   min-height: 109px;
-  align-items: center;
+  // align-items: baseline;
+  // align-items: center;
   padding: 0 15px;
 
   @media (max-width: $vp-1023) {
@@ -34,6 +35,8 @@
 }
 
 .page-header__button {
+  // padding-top: 34px;
+  padding-top: 29px;
   flex: 0 0 222px;
 
   @media (max-width: $vp-1023) {

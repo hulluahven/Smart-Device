@@ -14,7 +14,7 @@
   max-width: 1260px;
   margin: 0 auto;
   display: flex;
-  padding-top: 68px;
+  padding-top: 70px;
   justify-content: flex-end;
   position: relative;
 
@@ -50,7 +50,7 @@
 
 .about__text-container {
   padding: 0 11px 0 4px;
-  max-height: 240px;
+  max-height: 237px;
   overflow: hidden;
   position: relative;
 
@@ -121,6 +121,10 @@
 
 .about__text-button:hover {
   background-color: $black-pearl;
+}
+
+.about__text-button:focus {
+  background-color: $black-pearl;
   border-color: $black-pearl;
 }
 
@@ -137,6 +141,18 @@
   font-size: 14px;
   line-height: 17px;
   letter-spacing: 0.8px;
+}
+
+.about__text-hidder:hover ~ .about__text-button::after {
+  color: $iron;
+}
+
+.about__text-hidder:focus ~ .about__text-button::after {
+  color: $iron;
+}
+
+.about__text-hidder:active ~ .about__text-button::after {
+  color: $black-pearl;
 }
 
 .about__text-hidder:checked ~ .about__text-button::after {
@@ -181,7 +197,7 @@
   font-size: 16px;
   line-height: 22px;
   color: $black-pearl;
-  padding-bottom: 22px;
+  padding-bottom: 18px;
 
   @media (max-width: $vp-1023) {
     padding-bottom: 19px;

@@ -1,10 +1,11 @@
 .feedback {
   background: $deep-thunder-blue;
-  position: relative;
+  // position: relative;
 }
 
 .feedback__container {
   background: $deep-sky-blue;
+  background-size: cover;
   clip-path: polygon(62% -22%, 100% -12%, 109% 114%, -6% 111%);
 
   @media (max-width: $vp-1023) {
@@ -17,21 +18,27 @@
   margin: 0 auto;
   display: flex;
   justify-content: end;
+  position: relative;
 
   @media (max-width: $vp-1023) {
     justify-content: center;
   }
 }
 
-.feedback::before {
+.feedback__wrapper::before {
   content: "";
-  width: 43%;
-  height: 100%;
-  top: -6.8%;
-  right: 46.9%;
+  // width: 43%;
+  // height: 100%;
+  // top: -6.8%;
+  // right: 46.9%;
+  width: 39%;
+  height: 101%;
+  top: -7.8%;
+  right: 57.9%;
   position: absolute;
   background: url("../img/form-plane.png") no-repeat 49% 55%;
-  background-size: 61%;
+  // background-size: 61%;
+  background-size: 100%;
   z-index: 9;
 
   @media (max-width: $vp-1023) {
@@ -183,6 +190,7 @@ textarea {
   height: 49px;
   padding: 0 0 0 15px;
   color: $color-default-white;
+  resize: none;
 }
 
 .feedback__string-wrapper input::-moz-placeholder {
@@ -229,6 +237,14 @@ textarea {
   color: $black-pearl;
 }
 
+.feedback__checkbox-wrapper {
+  display: flex;
+
+  @media (max-width: $vp-767) {
+    // display: flex;
+  }
+}
+
 .feedback__checkbox-container {
   padding-left: 11%;
   padding-top: 4.3%;
@@ -243,6 +259,7 @@ textarea {
     padding-left: 18%;
     padding-top: 3.3%;
     padding-bottom: 2px;
+    padding-right: 10%;
   }
 
   @media (max-width: $vp-767) {
@@ -250,6 +267,11 @@ textarea {
     padding-left: 0;
     padding-top: 9.3%;
     column-gap: 10px;
+    // padding-right: 36%;
+  }
+
+  @media (max-width: $vp-449) {
+    // padding-right: 15%;
   }
 }
 

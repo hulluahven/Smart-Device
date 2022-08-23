@@ -7,6 +7,8 @@
   justify-content: space-between;
   padding-top: 53px;
   padding-left: 0;
+  // нов
+  // padding: 53px 15% 0;
 
   @media (max-width: $vp-1200) {
     justify-content: center;
@@ -22,5 +24,23 @@
 }
 
 .services-list__item {
-  margin: 0 18px 30px 18px;
+  // margin: 0 18px 30px 18px;
+  // margin: 0 5px 30px;
+  // нов
+  // padding: 0 18px 30px 18px;
+
+  // width: 30%;
+
+  margin: 0 19px 30px;
+  width: 28%;
+
+  @media (max-width: $vp-1023) {
+    width: 92%;
+  }
+
+  @media (max-width: $vp-767) {
+    width: 100%;
+  }
 }
+
+// вопрос? Карточки должны тянуться или фон в них должен тянуться?
