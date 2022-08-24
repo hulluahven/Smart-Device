@@ -13,7 +13,9 @@ const callOffer = document.querySelector('[data-modal]');
 const pageBody = document.querySelector('[data-body]');
 const popUpForm = document.querySelector('[data-message]');
 const nameField = popUpForm.querySelector('input[type=text]');
-// const submitButton = popUpForm.querySelector('[data-submit]');
+const navField = document.querySelector('[data-nav-field]');
+const contactsField = document.querySelector('[data-contacts-field]');
+const pageForm = document.querySelectorAll('[autocomplete="off"]');
 
 // ---------------------------------
 
@@ -39,7 +41,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   if (accordeonButton) {
-    navButton.addEventListener('click', () => {
+    navField.addEventListener('click', () => {
       if (mainNav && mainNav.classList.contains('is-opened')) {
         mainNav.classList.remove('is-opened');
         navButton.classList.remove('is-opened');
@@ -52,7 +54,7 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    contactsButton.addEventListener('click', () => {
+    contactsField.addEventListener('click', () => {
       if (contactsFeild && contactsFeild.classList.contains('is-opened')) {
         contactsFeild.classList.remove('is-opened');
         contactsButton.classList.remove('is-opened');
@@ -120,8 +122,31 @@ window.addEventListener('DOMContentLoaded', () => {
     userPhones.forEach(function (el) {
       el.addEventListener('keydown', onNumberKeyDown);
     });
+
+    phoneChecker();
+  }
+  // -----------------
+
+  function phoneChecker() {
+    pageForm.forEach((form) => {
+      form.addEventListener('submit', (evt) => {
+        evt.preventDefault();
+        userPhones.forEach((phone) => {
+          const valueLength = phone.value.length;
+          phone.setCustomValidity('');
+          if (valueLength < 16) {
+            phone.setCustomValidity(`Вы ввели номер не полностью.`);
+            phone.reportValidity();
+            return;
+          } else {
+            form.submit();
+          }
+        });
+      });
+    });
   }
 
+  // --------------
   // для Pop-up
 
   const closeMessage = () => {

@@ -12,7 +12,7 @@
   padding: 50px 15px 0;
   min-height: 230px;
   display: grid;
-  grid-template-columns: min-content 51% 45%;
+  grid-template-columns: min-content 51% auto;
 
   @media (max-width: $vp-1023) {
     grid-template-columns: repeat(2, 1fr);
@@ -25,7 +25,7 @@
   @media (max-width: $vp-767) {
     display: flex;
     flex-direction: column;
-    padding: 34px 23px 49px;
+    padding: 34px 0 49px;
   }
 }
 
@@ -47,8 +47,7 @@
 
   @media (max-width: $vp-767) {
     justify-content: space-around;
-    padding-right: 3px;
-    padding-bottom: 22px;
+    padding: 0 25px 22px 21px;
   }
 }
 
@@ -70,8 +69,9 @@
   }
 
   @media (max-width: $vp-767) {
-    padding-top: 0;
+    padding: 0 23px 0;
     position: relative;
+    cursor: pointer;
   }
 }
 
@@ -194,7 +194,7 @@
   display: flex;
   flex-direction: column;
   padding-top: 9px;
-  padding-left: 7%;
+  padding-left: 10%;
 
   @media (max-width: $vp-1023) {
     grid-area: address-area;
@@ -202,9 +202,9 @@
   }
 
   @media (max-width: $vp-767) {
-    padding-left: 0;
-    padding-top: 29px;
+    padding: 29px 23px 0;
     position: relative;
+    cursor: pointer;
   }
 }
 

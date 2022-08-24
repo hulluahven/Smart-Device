@@ -44,6 +44,11 @@
   display: block;
   width: 100%;
   height: auto;
+
+  @media (max-width: $vp-767) {
+    height: 250px;
+    object-fit: cover;
+  }
 }
 
 
