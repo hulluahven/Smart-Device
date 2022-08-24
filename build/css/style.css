@@ -478,7 +478,7 @@ template {
 }
 
 .page-header__button {
-  padding-top: 29px;
+  padding-top: 35px;
   -webkit-box-flex: 0;
   -ms-flex: 0 0 222px;
   flex: 0 0 222px;
@@ -489,7 +489,7 @@ template {
 }
 
 .logo__wrapper {
-  padding-top: 24px;
+  padding-top: 28px;
 }
 
 .logo__main {
@@ -527,7 +527,7 @@ template {
   justify-content: space-between;
   max-width: 516px;
   margin: 0 auto;
-  padding-top: 39px;
+  padding-top: 43px;
 }
 
 .contacts__link {
@@ -1156,6 +1156,7 @@ template {
   -ms-flex-pack: end;
   justify-content: flex-end;
   position: relative;
+  padding-bottom: 58px;
 }
 
 .about__wrapper::before {
@@ -1171,7 +1172,7 @@ template {
 
 .about__text-container {
   padding: 0 11px 0 4px;
-  max-height: 237px;
+  max-height: 235px;
   overflow: hidden;
   position: relative;
 }
@@ -1200,7 +1201,7 @@ template {
   border: 1px solid #00b2ff;
   border-radius: 4px;
   position: absolute;
-  bottom: 64px;
+  bottom: 120px;
   left: 21.4%;
   width: 153px;
   text-align: center;
@@ -1286,7 +1287,7 @@ template {
 .catalog__wrapper {
   max-width: 1300px;
   margin: 0 auto;
-  padding-top: 122px;
+  padding-top: 66px;
 }
 
 .catalog__title-wrapper h2 {
@@ -1325,7 +1326,7 @@ template {
 
 .services-list__item {
   margin: 0 19px 30px;
-  width: 28%;
+  width: 27.8%;
 }
 
 .services-card__link {
@@ -1446,41 +1447,6 @@ template {
   transform: rotate(136deg);
 }
 
-.feedback {
-  background: #00597f;
-}
-
-.feedback__container {
-  background: #00b2ff;
-  background-size: cover;
-  -webkit-clip-path: polygon(62% -22%, 100% -12%, 109% 114%, -6% 111%);
-  clip-path: polygon(62% -22%, 100% -12%, 109% 114%, -6% 111%);
-}
-
-.feedback__wrapper {
-  max-width: 1300px;
-  margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: end;
-  position: relative;
-}
-
-.feedback__wrapper::before {
-  content: "";
-  width: 39%;
-  height: 101%;
-  top: -7.8%;
-  right: 57.9%;
-  position: absolute;
-  background: url("../img/form-plane.png") no-repeat 49% 55%;
-  background-size: 100%;
-  z-index: 9;
-}
-
 .feedback__content-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1489,14 +1455,15 @@ template {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 50%;
+  min-width: 50%;
   padding-top: 134px;
   padding-bottom: 203px;
+  padding-right: 15px;
 }
 
 .feedback__title-container {
   padding-top: 31px;
-  padding-left: 14px;
+  padding-left: 30px;
 }
 
 .feedback__title-container h2 {
@@ -1548,7 +1515,7 @@ template {
 }
 
 .feedback__form-container form {
-  padding: 5.6% 7.1% 7% 3%;
+  padding: 5.6% 5.1% 7% 5%;
 }
 
 .feedback__string-wrapper input,
@@ -1617,9 +1584,9 @@ textarea {
   display: grid;
   -ms-grid-columns: 30px 1fr;
   grid-template-columns: 30px 1fr;
-  -webkit-column-gap: 13px;
-  -moz-column-gap: 13px;
-  column-gap: 13px;
+  -webkit-column-gap: 14px;
+  -moz-column-gap: 14px;
+  column-gap: 14px;
   -ms-grid-column: 2;
   grid-column: 2;
   -ms-grid-row: 1;
@@ -1733,6 +1700,7 @@ textarea {
   grid-column: 1;
   -ms-grid-row: 1;
   grid-row: 1;
+  margin-left: 3px;
 }
 
 .feedback__wrapper button:hover {
@@ -1772,6 +1740,8 @@ textarea {
   display: -ms-flexbox;
   display: flex;
   z-index: 100;
+  height: 100vh;
+  overflow: scroll;
 }
 
 .modal__content-container {
@@ -1789,7 +1759,7 @@ textarea {
   padding: 0;
   height: 610px;
   position: relative;
-  margin: 7.5% 20px 400vh;
+  margin: 7.5% 20px;
 }
 
 .modal__title-container {
@@ -2144,6 +2114,25 @@ textarea {
     background: linear-gradient(to bottom, rgba(25, 32, 36, 0.7)), url("../img/back-desktop.png") no-repeat center;
     background-size: cover;
   }
+
+  .feedback__container {
+    position: relative;
+    background: url("../img/triangle.png") no-repeat 0% 98% #00b2ff;
+  }
+
+  .feedback__wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: end;
+    position: relative;
+    background: url("../img/form-plane.png") no-repeat 5% 247px;
+    background-size: 39%;
+  }
 }
 
 @media (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1024px) and (-o-min-device-pixel-ratio: 2/1), (min-width: 1024px) and (min-resolution: 2dppx) {
@@ -2152,6 +2141,15 @@ textarea {
     background: -o-linear-gradient(top, rgba(25, 32, 36, 0.7)), url("../img/back-desktop@2x.png");
     background: linear-gradient(to bottom, rgba(25, 32, 36, 0.7)), url("../img/back-desktop@2x.png");
     background-size: cover;
+  }
+
+  .feedback__container {
+    background: url("../img/triangle@2x.png") no-repeat 0% 99% #00b2ff;
+  }
+
+  .feedback__wrapper {
+    background: url("../img/form-plane@2x.png") no-repeat 5% 247px;
+    background-size: 39%;
   }
 }
 
@@ -2166,6 +2164,7 @@ textarea {
 @media (max-width: 1023px) {
   .page-header {
     position: absolute;
+    min-width: 320px;
   }
 
   .page-header__container {
@@ -2188,7 +2187,7 @@ textarea {
     padding-bottom: 20px;
     padding-top: 21px;
     padding-right: 11px;
-    margin: 0 0 0 51%;
+    margin: 0 0 0 auto;
     max-width: 215px;
     -webkit-box-pack: end;
     -ms-flex-pack: end;
@@ -2227,7 +2226,7 @@ textarea {
   }
 
   .promo__title-wrapper {
-    padding: 178px 110px 26.5% 50px;
+    padding: 23% 13% 26.5% 6.2%;
   }
 
   .promo__title-wrapper h1 {
@@ -2381,10 +2380,12 @@ textarea {
 
   .about__text {
     width: 71%;
+    padding-bottom: 69px;
   }
 
   .about__text-button {
     left: 29.2%;
+    bottom: 65px;
   }
 
   .about__text h2 {
@@ -2439,24 +2440,21 @@ textarea {
   }
 
   .feedback__container {
-    -webkit-clip-path: none;
-    clip-path: none;
+    background: #00b2ff;
   }
 
   .feedback__wrapper {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-  }
-
-  .feedback__wrapper::before {
-    display: none;
+    background-image: none;
   }
 
   .feedback__content-container {
     width: 100%;
     padding-top: 13px;
-    padding-bottom: 72px;
+    padding-bottom: 70px;
+    padding-right: 0;
   }
 
   .feedback__title-container {
@@ -2514,6 +2512,7 @@ textarea {
 
   .feedback__wrapper button {
     padding: 6% 12% 3%;
+    margin-left: 0;
   }
 }
 
@@ -2529,7 +2528,7 @@ textarea {
 @media (max-width: 767px) {
   .page-header__container {
     min-height: 65px;
-    padding: 0 26px;
+    padding: 0 8%;
   }
 
   .logo__wrapper {
@@ -2548,18 +2547,18 @@ textarea {
   .contacts__wrapper {
     padding-top: 9px;
     padding-bottom: 18px;
-    margin: 0 auto;
+    margin: 0 0 0 auto;
     padding-right: 0;
   }
 
   .contacts__mail {
-    padding-left: 26px;
-    margin-right: 7px;
+    padding-left: 36px;
+    margin-right: 16px;
   }
 
   .contacts__phone {
-    padding-left: 26px;
-    margin-right: 7px;
+    padding-left: 18px;
+    margin-right: 16px;
   }
 
   .button__advise span {
@@ -2581,7 +2580,7 @@ textarea {
   }
 
   .promo__title-wrapper {
-    padding: 150px 25px 59.2%;
+    padding: 47% 8% 59.2%;
   }
 
   .promo__title-wrapper h1 {
@@ -2594,7 +2593,7 @@ textarea {
   .promo__title-wrapper p {
     font-size: 14px;
     line-height: 21px;
-    padding-bottom: 45px;
+    padding-bottom: 16.2%;
   }
 
   .promo__button {
@@ -2616,7 +2615,7 @@ textarea {
     -ms-flex-pack: distribute;
     justify-content: space-around;
     padding-right: 3px;
-    padding-bottom: 19px;
+    padding-bottom: 22px;
   }
 
   .footer__nav-wrapper {
@@ -2930,6 +2929,7 @@ textarea {
 
   .services-list__item {
     width: 100%;
+    margin: 0 5px 30px;
   }
 
   .services-card__link {

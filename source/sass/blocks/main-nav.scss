@@ -31,7 +31,6 @@
   @media (max-width: $vp-1023) {
     display: flex;
     flex-direction: column;
-    // grid-template-columns: 1fr;
   }
 }
 
@@ -53,7 +52,6 @@
 
 .main-nav__item {
   padding-bottom: 8px;
-  // padding-right: 50px;
 }
 
 .main-nav__item--about {

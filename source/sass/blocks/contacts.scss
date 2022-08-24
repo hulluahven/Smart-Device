@@ -4,13 +4,13 @@
   justify-content: space-between;
   max-width: 516px;
   margin: 0 auto;
-  padding-top: 39px;
+  padding-top: 43px;
 
   @media (max-width: $vp-1023) {
     padding-bottom: 20px;
     padding-top: 21px;
     padding-right: 11px;
-    margin: 0 0 0 51%;
+    margin: 0 0 0 auto;
     max-width: 215px;
     justify-content: flex-end;
   }
@@ -18,7 +18,7 @@
   @media (max-width: $vp-767) {
     padding-top: 9px;
     padding-bottom: 18px;
-    margin: 0 auto;
+    margin: 0 0 0 auto;
     padding-right: 0;
   }
 }
@@ -92,8 +92,8 @@
   }
 
   @media (max-width: $vp-767) {
-    padding-left: 26px;
-    margin-right: 7px;
+    padding-left: 36px;
+    margin-right: 16px;
   }
 }
 
@@ -106,7 +106,7 @@
   }
 
   @media (max-width: $vp-767) {
-    padding-left: 26px;
-    margin-right: 7px;
+    padding-left: 18px;
+    margin-right: 16px;
   }
 }

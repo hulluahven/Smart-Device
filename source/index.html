@@ -318,7 +318,7 @@
               <p>Разделы сайта</p>
               <button class="footer__accordeon-button" data-button data-nav-button>Открыть/закрыть раздел</button>
             </div>
-            <nav class="footer__nav main-nav main-nav--no-js" data-nav>
+            <nav class="footer__nav main-nav main-nav--no-js" data-nav data-accordeon>
               <ul class="main-nav__list">
                 <li class="main-nav__item main-nav__item--about">
                   <a class="main-nav__link" href="#">О&nbsp;Компании</a>
@@ -349,7 +349,7 @@
             <p>Наш офис</p>
             <button class="footer__accordeon-button" data-button data-contacts-button>Открыть/закрыть раздел</button>
           </div>
-          <div class="footer__contacts-wrapper footer__contacts-wrapper--no-js" data-contacts>
+          <div class="footer__contacts-wrapper footer__contacts-wrapper--no-js" data-contacts data-accordeon>
             <address>г. Мытищи, Олимпийский проспект,<br> д.10</address>
             <div class="footer__phone-wrapper">
               <a href="tel:84955894050">+7 (495) 589-40-50</a>
@@ -362,7 +362,7 @@
       </footer>
       <section class="modal">
         <div class="modal__wrapper" data-message>
-        <div class="modal__content-container" data-modal tabindex="0">
+        <div class="modal__content-container" data-popup>
           <div class="modal__title-container">
             <h2>Закажите звонок</h2>
             <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
@@ -401,10 +401,13 @@
                 </div>
                   <button data-submit type="submit">Отправить</button>
               </div>
+              <div class="modal__button-wrapper">
+                <button data-close type="submit">Закрыть</button>
+              </div>
             </form>
-            <div class="modal__button-wrapper">
+            <!-- <div class="modal__button-wrapper">
               <button data-close type="button">Закрыть</button>
-            </div>
+            </div> -->
           </div>
         </div>
         </div>

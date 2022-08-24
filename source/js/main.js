@@ -13,9 +13,8 @@ const callOffer = document.querySelector('[data-modal]');
 const pageBody = document.querySelector('[data-body]');
 const popUpForm = document.querySelector('[data-message]');
 const nameField = popUpForm.querySelector('input[type=text]');
-const formFields = popUpForm.querySelectorAll('input');
-const confirmField = popUpForm.querySelector('input[type=checkbox]');
-const submitForm = popUpForm.querySelector('[data-submit]');
+// const submitButton = popUpForm.querySelector('[data-submit]');
+
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -29,8 +28,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Аккордеон
 
-  // console.log(formFields)
-
   if (footerContainer) {
     footerContainer.classList.remove('footer__container--no-js');
   }
@@ -42,20 +39,29 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   if (accordeonButton) {
-    accordeonButton.forEach((button) => {
-      button.addEventListener('click', () => {
-        if (mainNav && mainNav.classList.contains('is-opened') && navButton) {
-          mainNav.classList.remove('is-opened');
-          navButton.classList.remove('is-opened');
-          contactsFeild.classList.add('is-opened');
-          contactsButton.classList.add('is-opened');
-        } else {
-          contactsFeild.classList.remove('is-opened');
-          contactsButton.classList.remove('is-opened');
-          mainNav.classList.add('is-opened');
-          navButton.classList.add('is-opened');
-        }
-      });
+    navButton.addEventListener('click', () => {
+      if (mainNav && mainNav.classList.contains('is-opened')) {
+        mainNav.classList.remove('is-opened');
+        navButton.classList.remove('is-opened');
+
+      } else {
+        mainNav.classList.add('is-opened');
+        navButton.classList.add('is-opened');
+        contactsFeild.classList.remove('is-opened');
+        contactsButton.classList.remove('is-opened');
+      }
+    });
+
+    contactsButton.addEventListener('click', () => {
+      if (contactsFeild && contactsFeild.classList.contains('is-opened')) {
+        contactsFeild.classList.remove('is-opened');
+        contactsButton.classList.remove('is-opened');
+      } else {
+        contactsFeild.classList.add('is-opened');
+        contactsButton.classList.add('is-opened');
+        mainNav.classList.remove('is-opened');
+        navButton.classList.remove('is-opened');
+      }
     });
   }
 
@@ -77,7 +83,6 @@ window.addEventListener('DOMContentLoaded', () => {
           input.value = ' ';
         }
         if (['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'].indexOf(inputNumbersValue[0]) > -1) {
-          // для российского формата номера
 
           let firstSymbols = '+7';
 
@@ -99,11 +104,6 @@ window.addEventListener('DOMContentLoaded', () => {
             formatedInputValue += '-' + inputNumbersValue.substring(9, 11);
           }
         }
-        // else {
-        //   // для форматов номера других стран
-
-        //   formatedInputValue = '+' + inputNumbersValue.substring(0, 16);
-        // }
 
         input.value = formatedInputValue;
         return formatedInputValue;
@@ -130,6 +130,8 @@ window.addEventListener('DOMContentLoaded', () => {
         document.removeEventListener('keydown', onPopupEscapeKeydown);
         popUpForm.removeEventListener('click', onClickMessage);
         closeButton.removeEventListener('click', onClickMessage);
+        document.removeEventListener('focus', catchFocus);
+
       }
     };
 
@@ -173,21 +175,48 @@ window.addEventListener('DOMContentLoaded', () => {
         popUpForm.classList.add('is-open');
         pageBody.classList.add('is-hidden');
         nameField.focus();
-        toLoopFocus();
+        catchFocus();
       }
     });
   }
 
-  const toLoopFocus = () => {
-    document.addEventListener('focus', (evt) => {
-      if (evt.target === closeButton) {
-        evt.stopPropagation();
-        nameField.focus();
-      }
-    }, true);
-  };
+  function catchFocus() {
+    const modalElements = popUpForm.querySelectorAll('input, textarea, button');
+    const firstFocusableElement = modalElements[0];
+    const lastfocusableElement = modalElements[modalElements.length - 1];
+    const keyCodeTab = 9;
 
+    function buttonListener() {
+      document.addEventListener('keydown', function (e) {
+        const isTabPressed = (e.key === 'Tab' || e.keyCode === keyCodeTab);
+
+        if (!isTabPressed) {
+          return;
+        } else {
+          if (document.activeElement === lastfocusableElement) {
+            firstFocusableElement.focus();
+            e.preventDefault();
+          }
+        }
+
+        if (e.shiftKey) {
+          if (document.activeElement === firstFocusableElement) {
+            lastfocusableElement.focus();
+            e.preventDefault();
+          } else {
+            if (document.activeElement === lastfocusableElement) {
+              firstFocusableElement.focus();
+              e.preventDefault();
+            }
+          }
+        }
+      });
+    }
+    buttonListener();
+  }
 });
+
+
 // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
 // в load следует добавить скрипты, не участвующие в работе первого экрана
 window.addEventListener('load', () => {

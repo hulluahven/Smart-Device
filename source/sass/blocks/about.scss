@@ -17,6 +17,7 @@
   padding-top: 70px;
   justify-content: flex-end;
   position: relative;
+  padding-bottom: 58px;
 
   @media (max-width: $vp-1023) {
     padding-top: 28px;
@@ -50,7 +51,7 @@
 
 .about__text-container {
   padding: 0 11px 0 4px;
-  max-height: 237px;
+  max-height: 235px;
   overflow: hidden;
   position: relative;
 
@@ -81,6 +82,7 @@
 
   @media (max-width: $vp-1023) {
     width: 71%;
+    padding-bottom: 69px;
   }
 
   @media (max-width: $vp-767) {
@@ -102,13 +104,14 @@
   border: 1px solid $deep-sky-blue;
   border-radius: 4px;
   position: absolute;
-  bottom: 64px;
+  bottom: 120px;
   left: 21.4%;
   width: 153px;
   text-align: center;
 
   @media (max-width: $vp-1023) {
     left: 29.2%;
+    bottom: 65px;
   }
 
   @media (max-width: $vp-767) {

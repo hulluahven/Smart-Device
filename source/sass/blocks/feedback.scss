@@ -1,63 +1,54 @@
-.feedback {
-  background: $deep-thunder-blue;
-  // position: relative;
-}
 
 .feedback__container {
-  background: $deep-sky-blue;
-  background-size: cover;
-  clip-path: polygon(62% -22%, 100% -12%, 109% 114%, -6% 111%);
+  @media (min-width: $vp-1024) {
+    position: relative;
+    background: url("../img/triangle.png") no-repeat 0% 98% $deep-sky-blue;
+
+    @media (min-resolution: 2dppx) {
+      background: url("../img/triangle@2x.png") no-repeat 0% 99% $deep-sky-blue;
+    }
+  }
 
   @media (max-width: $vp-1023) {
-    clip-path: none;
+    background: $deep-sky-blue;
   }
 }
 
 .feedback__wrapper {
-  max-width: 1300px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: end;
-  position: relative;
+  @media (min-width: $vp-1024) {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: end;
+    position: relative;
+    background: url("../img/form-plane.png") no-repeat 5% 247px;
+    background-size: 39%;
+
+    @media (min-resolution: 2dppx) {
+      background: url("../img/form-plane@2x.png") no-repeat 5% 247px;
+      background-size: 39%;
+    }
+  }
 
   @media (max-width: $vp-1023) {
     justify-content: center;
-  }
-}
-
-.feedback__wrapper::before {
-  content: "";
-  // width: 43%;
-  // height: 100%;
-  // top: -6.8%;
-  // right: 46.9%;
-  width: 39%;
-  height: 101%;
-  top: -7.8%;
-  right: 57.9%;
-  position: absolute;
-  background: url("../img/form-plane.png") no-repeat 49% 55%;
-  // background-size: 61%;
-  background-size: 100%;
-  z-index: 9;
-
-  @media (max-width: $vp-1023) {
-    display: none;
+    background-image: none;
   }
 }
 
 .feedback__content-container {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  min-width: 50%;
   padding-top: 134px;
   padding-bottom: 203px;
-
+  padding-right: 15px;
 
   @media (max-width: $vp-1023) {
     width: 100%;
     padding-top: 13px;
-    padding-bottom: 72px;
+    padding-bottom: 70px;
+    padding-right: 0;
   }
 
   @media (max-width: $vp-767) {
@@ -67,7 +58,7 @@
 
 .feedback__title-container {
   padding-top: 31px;
-  padding-left: 14px;
+  padding-left: 30px;
 
   @media (max-width: $vp-1023) {
     padding-left: 49px;
@@ -93,7 +84,6 @@
   }
 }
 
-
 .feedback__title-container p {
   font-family: "PTMono", "Arial", sans-serif;
   font-weight: 400;
@@ -116,7 +106,6 @@
     padding-right: 32px;
   }
 }
-
 
 .feedback__form-container ul {
   margin: 0;
@@ -165,7 +154,7 @@
 }
 
 .feedback__form-container form {
-  padding: 5.6% 7.1% 7% 3%;
+  padding: 5.6% 5.1% 7% 5%;
 
   @media (max-width: $vp-1023) {
     padding: 3.1% 6.5% 7% 6.2%;
@@ -175,7 +164,6 @@
     padding: 10.1% 7.5% 7% 7.2%;
   }
 }
-
 
 .feedback__string-wrapper input,
 textarea {
@@ -239,10 +227,6 @@ textarea {
 
 .feedback__checkbox-wrapper {
   display: flex;
-
-  @media (max-width: $vp-767) {
-    // display: flex;
-  }
 }
 
 .feedback__checkbox-container {
@@ -251,7 +235,7 @@ textarea {
   position: relative;
   display: grid;
   grid-template-columns: 30px 1fr;
-  column-gap: 13px;
+  column-gap: 14px;
   grid-column: 2;
   grid-row: 1;
 
@@ -267,11 +251,6 @@ textarea {
     padding-left: 0;
     padding-top: 9.3%;
     column-gap: 10px;
-    // padding-right: 36%;
-  }
-
-  @media (max-width: $vp-449) {
-    // padding-right: 15%;
   }
 }
 
@@ -292,7 +271,6 @@ textarea {
   grid-area: text;
   margin-right: 0;
 }
-
 
 .feedback__checkbox-container input {
   opacity: 0;
@@ -405,9 +383,11 @@ textarea {
   width: 100%;
   grid-column: 1;
   grid-row: 1;
+  margin-left: 3px;
 
   @media (max-width: $vp-1023) {
     padding: 6% 12% 3%;
+    margin-left: 0;
   }
 
   @media (max-width: $vp-767) {

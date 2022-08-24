@@ -46,10 +46,9 @@
   }
 
   @media (max-width: $vp-767) {
-    // justify-content: center;
     justify-content: space-around;
     padding-right: 3px;
-    padding-bottom: 19px;
+    padding-bottom: 22px;
   }
 }
 
@@ -63,9 +62,6 @@
   display: flex;
   flex-direction: column;
   padding-top: 9px;
-  // margin-left: 16.2%;
-  // flex: 1 1 auto;
-  // margin: 0 auto;
   margin-left: 25.8%;
 
   @media (max-width: $vp-1023) {
@@ -188,7 +184,6 @@
   }
 }
 
-
 .footer__nav {
   @media (max-width: $vp-767) {
     padding: 0;
@@ -284,7 +279,6 @@
     padding-top: 13px;
   }
 }
-
 
 .footer__phone-wrapper a {
   font-family: "PTMono", "Arial", sans-serif;

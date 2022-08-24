@@ -2,12 +2,8 @@
   display: flex;
   flex-wrap: wrap;
   padding-top: 36px;
-  // padding-right: 55px;
-  // padding-right: 33px;
-  // padding-left: 16px;
   padding-right: 29px;
   padding-left: 6px;
-  // justify-content: space-between;
   justify-content: flex-start;
 
   @media (max-width: $vp-1023) {
@@ -29,7 +25,6 @@
   padding-left: 6px;
 
   @media (max-width: $vp-1023) {
-    // width: 50px;
     display: flex;
     box-sizing: border-box;
   }
