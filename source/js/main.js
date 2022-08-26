@@ -133,14 +133,10 @@ window.addEventListener('DOMContentLoaded', () => {
         evt.preventDefault();
         userPhones.forEach((phone) => {
           const valueLength = phone.value.length;
-          phone.setCustomValidity('');
           if (valueLength < 16) {
-            phone.setCustomValidity(`Вы ввели номер не полностью.`);
-            phone.reportValidity();
             return;
-          } else {
-            form.submit();
           }
+          form.submit();
         });
       });
     });
